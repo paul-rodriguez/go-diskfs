@@ -8,9 +8,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/diskfs/go-diskfs/filesystem"
-	"github.com/diskfs/go-diskfs/filesystem/squashfs"
-	"github.com/diskfs/go-diskfs/testhelper"
+	"github.com/paul-rodriguez/go-diskfs/filesystem"
+	"github.com/paul-rodriguez/go-diskfs/filesystem/squashfs"
+	"github.com/paul-rodriguez/go-diskfs/testhelper"
 )
 
 var (

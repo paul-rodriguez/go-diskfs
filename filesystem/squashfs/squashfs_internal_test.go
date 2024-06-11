@@ -9,8 +9,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/diskfs/go-diskfs/filesystem"
-	"github.com/diskfs/go-diskfs/testhelper"
+	"github.com/paul-rodriguez/go-diskfs/filesystem"
+	"github.com/paul-rodriguez/go-diskfs/testhelper"
 )
 
 func TestWorkspace(t *testing.T) {

@@ -3,14 +3,14 @@ package squashfs
 // This file contains all of the constants for running tests. These are generated from
 // the following:
 // 1. Run the testdata/buildsqs.sh script, which generates file.sqs and file_uncompressed.sqs
-// 2. Run github.com/diskfs/squashfs-utils on the file
+// 2. Run github.com/paul-rodriguez/squashfs-utils on the file
 // 3. Take the relevant sizes, locations and inodes and use them here.
 
 import (
 	"os"
 	"time"
 
-	"github.com/diskfs/go-diskfs/util"
+	"github.com/paul-rodriguez/go-diskfs/util"
 )
 
 const (

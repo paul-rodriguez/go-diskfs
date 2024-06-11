@@ -8,8 +8,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/diskfs/go-diskfs/filesystem/squashfs"
-	"github.com/diskfs/go-diskfs/testhelper"
+	"github.com/paul-rodriguez/go-diskfs/filesystem/squashfs"
+	"github.com/paul-rodriguez/go-diskfs/testhelper"
 )
 
 func testRandomString(slen int) string {
