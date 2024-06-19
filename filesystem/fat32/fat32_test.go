@@ -14,10 +14,10 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/paul-rodriguez/go-diskfs/filesystem"
-	"github.com/paul-rodriguez/go-diskfs/filesystem/fat32"
-	"github.com/paul-rodriguez/go-diskfs/testhelper"
-	"github.com/paul-rodriguez/go-diskfs/util"
+	"github.com/diskfs/go-diskfs/filesystem"
+	"github.com/diskfs/go-diskfs/filesystem/fat32"
+	"github.com/diskfs/go-diskfs/testhelper"
+	"github.com/diskfs/go-diskfs/util"
 )
 
 var (
