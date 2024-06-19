@@ -1,4 +1,4 @@
-module github.com/paul-rodriguez/go-diskfs
+module github.com/diskfs/go-diskfs
 
 go 1.19
 
