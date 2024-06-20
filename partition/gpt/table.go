@@ -31,13 +31,15 @@ func (t *Table) Resize(size uint64) {
 }
 
 func (t *Table) AvailableExpandSectors(toExpand *Partition) uint64 {
-	newEnd := t.lastDataSector
+	newEnd := t.lastDataSector - 1
 	for _, part := range t.Partitions {
+		fmt.Printf("newEnd: %d", newEnd)
+		limit := part.Start - 1
 		isRelevant := part != toExpand &&
-			part.Start > toExpand.Start &&
-			part.Start < newEnd
+			limit > toExpand.Start &&
+			limit < newEnd
 		if isRelevant {
-			newEnd = part.Start
+			newEnd = limit
 		}
 	}
 	return (newEnd - toExpand.End)
