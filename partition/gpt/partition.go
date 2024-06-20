@@ -231,7 +231,7 @@ func (p *Partition) ReadContents(f util.File, out io.Writer) (int64, error) {
 }
 
 func (p *Partition) ReadBytes(
-	f util.File,
+	f io.ReaderAt,
 	offset uint64,
 	size uint64,
 ) (
