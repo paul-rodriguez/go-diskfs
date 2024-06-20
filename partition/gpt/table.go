@@ -34,21 +34,6 @@ func (t *Table) Resize(size uint64) {
 	t.lastDataSector = diskSectors - 1 - partSectors
 }
 
-func (t *Table) AvailableExpandSectors(toExpand *Partition) uint64 {
-	newEnd := t.lastDataSector - 1
-	for _, part := range t.Partitions {
-		fmt.Printf("newEnd: %d", newEnd)
-		limit := part.Start - 1
-		isRelevant := part != toExpand &&
-			limit > toExpand.Start &&
-			limit < newEnd
-		if isRelevant {
-			newEnd = limit
-		}
-	}
-	return (newEnd - toExpand.End)
-}
-
 // gptSize max potential size for partition array reserved 16384
 const (
 	mbrPartitionEntriesStart = 446
