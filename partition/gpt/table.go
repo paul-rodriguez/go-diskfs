@@ -20,6 +20,10 @@ func (t *Table) TotalSize() uint64 {
 	return (t.secondaryHeader + gptHeaderSector) * uint64(t.LogicalSectorSize)
 }
 
+func (t *Table) LastDataSector() uint64 {
+	return t.lastDataSector
+}
+
 func (t *Table) Resize(size uint64) {
 	// how many sectors on the disk?
 	diskSectors := size / uint64(t.LogicalSectorSize)
