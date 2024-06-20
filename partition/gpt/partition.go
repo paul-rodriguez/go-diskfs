@@ -230,6 +230,31 @@ func (p *Partition) ReadContents(f util.File, out io.Writer) (int64, error) {
 	return total, nil
 }
 
+func (p *Partition) ReadBytes(
+	f util.File,
+	offset uint64,
+	size uint64,
+) (
+	*bytes.Buffer,
+	error,
+) {
+	if offset+size > uint64(p.GetSize()) {
+		err := fmt.Errorf(
+			"cannot read byte at offset %d, outside of partition size (%d bytes)",
+			offset+size-1,
+			p.GetSize())
+		return nil, err
+	}
+
+	buf := make([]byte, size)
+	_, err := f.ReadAt(buf, p.GetStart()+int64(offset))
+	if err != nil {
+		return nil, fmt.Errorf("cannot read from file: %w", err)
+	}
+	result := bytes.NewBuffer(buf)
+	return result, nil
+}
+
 // initEntry adjust the Start/End/Size entries and ensure it has a GUID
 func (p *Partition) initEntry(blocksize, starting uint64) error {
 	part := p
