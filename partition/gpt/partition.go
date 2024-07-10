@@ -300,5 +300,5 @@ func (p *Partition) UUID() string {
 // Expand increases the size of the partition by a number of sectors
 func (p *Partition) Expand(sectors uint64) {
 	p.End += sectors
-	p.Size += sectors * p.logicalSectorSize
+	p.Size += sectors * uint64(p.logicalSectorSize)
 }
