@@ -230,11 +230,6 @@ func (p *Partition) ReadContents(f util.File, out io.Writer) (int64, error) {
 	return total, nil
 }
 
-func (p *Partition) Expand(sectors uint64) {
-	p.End += sectors
-	p.Size += sectors * uint64(p.logicalSectorSize)
-}
-
 // initEntry adjust the Start/End/Size entries and ensure it has a GUID
 func (p *Partition) initEntry(blocksize, starting uint64) error {
 	part := p
